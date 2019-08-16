@@ -19,5 +19,23 @@ module.exports = {
   ],
   // add your custom rules here
   rules: {
+    'prettier/prettier': [
+      'error',
+      {
+        htmlWhitespaceSensitivity: 'ignore' // HTMLの改行を無視する
+      }
+    ],
+    'vue/html-self-closing': [
+      'error',
+      {
+        html: {
+          void: 'always',
+          normal: 'always',
+          component: 'always' // <img /> 等の記法を許可
+        },
+        svg: 'always',
+        math: 'always'
+      }
+    ]
   }
 }
