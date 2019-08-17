@@ -42,6 +42,8 @@
 </template>
 
 <script>
+// TODO ヘッダー部分のUIの見直し
+
 export default {
   data() {
     return {
@@ -51,7 +53,7 @@ export default {
       items: [
         { title: 'Home', icon: 'home', to: '/' },
         { title: 'Profile', icon: 'person', to: '/profile' },
-        { title: 'Skill', icon: 'laptop_mac', to: '/skill' },
+        { title: 'Skill', icon: 'keyboard', to: '/skill' },
         { title: 'Repositories', icon: 'folder', to: '/repositories' },
         { title: 'Contact', icon: 'email', to: '/contact' }
       ]
