@@ -1,6 +1,6 @@
 <template>
-  <v-app dark>
-    <v-navigation-drawer
+  <v-app>
+    <!-- <v-navigation-drawer
       v-model="drawer"
       :mini-variant="miniVariant"
       :clipped="clipped"
@@ -23,8 +23,8 @@
           </v-list-tile-content>
         </v-list-tile>
       </v-list>
-    </v-navigation-drawer>
-    <v-toolbar :clipped-left="clipped" fixed app>
+    </v-navigation-drawer> -->
+    <!-- <v-toolbar :clipped-left="clipped" fixed app>
       <v-toolbar-side-icon @click="drawer = !drawer" />
       <v-btn icon @click.stop="miniVariant = !miniVariant">
         <v-icon>{{ `chevron_${miniVariant ? 'right' : 'left'}` }}</v-icon>
@@ -40,13 +40,15 @@
       <v-btn icon @click.stop="rightDrawer = !rightDrawer">
         <v-icon>menu</v-icon>
       </v-btn>
-    </v-toolbar>
+    </v-toolbar> -->
+    <theHeader />
     <v-content>
       <v-container>
         <nuxt />
       </v-container>
     </v-content>
-    <v-navigation-drawer v-model="rightDrawer" :right="right" temporary fixed>
+    <theFooter />
+    <!-- <v-navigation-drawer v-model="rightDrawer" :right="right" temporary fixed>
       <v-list>
         <v-list-tile @click.native="right = !right">
           <v-list-tile-action>
@@ -60,12 +62,19 @@
     </v-navigation-drawer>
     <v-footer :fixed="fixed" app>
       <span>&copy; 2019</span>
-    </v-footer>
+    </v-footer> -->
   </v-app>
 </template>
 
 <script>
+import theHeader from '../components/theHeader'
+import theFooter from '../components/theFooter'
+
 export default {
+  components: {
+    theHeader,
+    theFooter
+  },
   data() {
     return {
       clipped: false,
