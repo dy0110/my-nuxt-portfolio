@@ -55,7 +55,7 @@ export default {
     return {
       title: "Daichi Yoshida's PortForio",
       listTitle: 'Contents',
-      drawer: null,
+      drawer: false,
       items: [
         { title: 'Home', icon: 'home', to: '/' },
         { title: 'Profile', icon: 'person', to: '/profile' },
