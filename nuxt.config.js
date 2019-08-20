@@ -1,3 +1,7 @@
+// require('dotenv').config()
+import dotenv from 'dotenv'
+dotenv.config()
+
 export default {
   mode: 'universal',
   /*
@@ -51,6 +55,9 @@ export default {
    ** See https://axios.nuxtjs.org/options
    */
   axios: {},
+  env: {
+    GITHUB_TOKEN: process.env.GITHUB_TOKEN
+  },
   /*
    ** vuetify module configuration
    ** https://github.com/nuxt-community/vuetify-module
