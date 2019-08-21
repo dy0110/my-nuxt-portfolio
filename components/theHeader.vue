@@ -1,8 +1,8 @@
 <template>
   <div>
     <v-toolbar id="app_header" color="primary">
-      <v-btn icon active-class large :to="'/'" color="grey lighten-3">
-        <v-img src="icon.png" aspect-ratio="1" />
+      <v-btn icon active-class large :to="'/'" color="accent">
+        <span class="white--text headline">D</span>
       </v-btn>
       <v-toolbar-title id="app_title" to="/" v-text="title" />
       <v-spacer />
@@ -35,7 +35,7 @@
         <v-divider />
         <!-- NOTE V-listを使うと「unknown custom element」エラーになる -->
         <div v-for="item in items" :key="item.title">
-          <v-icon color="primary">
+          <v-icon color="secondary">
             {{ item.icon }}
           </v-icon>
           <span class="list_item" @click="$router.push(`${item.to}`)">
