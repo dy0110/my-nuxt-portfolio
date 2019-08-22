@@ -6,7 +6,7 @@
           <v-icon color="white" size="36">person</v-icon>
         </span>
       </v-avatar>
-      &nbsp;プロフィール
+      &nbsp;Profile
     </v-card-title>
     <v-card-text>
       <v-avatar class="mb-2" left color="accent" size="96">
@@ -46,11 +46,20 @@
         関東近辺の模型展示会に参加して楽しんでいます。
       </div>
     </v-card-text>
+    <v-card-actions>
+      <v-spacer />
+      <scrollTopButton />
+    </v-card-actions>
   </v-card>
 </template>
 
 <script>
+import scrollTopButton from '../components/scrollTopButton'
+
 export default {
+  components: {
+    scrollTopButton
+  },
   data() {
     // TODO StoreからGitHubのユーザー情報を取り出す
     return {
