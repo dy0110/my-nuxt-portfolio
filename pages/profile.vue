@@ -15,14 +15,6 @@ export default {
   components: {
     profileCard,
     timeLine
-  },
-  data() {
-    return {
-      activeFab: {
-        icon: 'expand_less',
-        color: 'light-green lighten-1'
-      }
-    }
   }
 }
 </script>

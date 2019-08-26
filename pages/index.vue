@@ -21,3 +21,16 @@
     </v-flex>
   </v-layout>
 </template>
+
+<script>
+export default {
+  async asyncData({ store, redirect }) {
+    try {
+      // NOTE githubからユーザー情報を取得
+      await store.dispatch('user/setGithubUserData')
+    } catch (errror) {
+      redirect('/error')
+    }
+  }
+}
+</script>

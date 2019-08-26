@@ -3,11 +3,14 @@
     <v-toolbar id="app_header" color="primary">
       <v-btn icon active-class large :to="'/'" color="accent">
         <span class="white--text headline">D</span>
+        <!-- <img id="header_avater" src="icon.png" alt="" /> -->
       </v-btn>
       <v-toolbar-title id="app_title" to="/" v-text="title" />
       <v-spacer />
       <v-spacer />
+      <!-- ヘッダーアイテム -->
       <v-toolbar-items class="hidden-sm-and-down">
+        <!-- 大画面時に表示する遷移ボタン -->
         <v-tooltip v-for="(item, i) in items" :key="i" bottom>
           <template v-slot:activator="{ on }">
             <v-btn flat :to="item.to" color="white" class="list_item" v-on="on">
@@ -20,6 +23,7 @@
         </v-tooltip>
       </v-toolbar-items>
       <v-toolbar-items class="hidden-md-and-up">
+        <!-- 小画面時に表示するサイドメニュー表示ボタン -->
         <v-btn icon @click.stop="drawer = !drawer">
           <v-icon color="white">
             dehaze
@@ -27,6 +31,7 @@
         </v-btn>
       </v-toolbar-items>
     </v-toolbar>
+    <!-- サイドメニュー -->
     <v-navigation-drawer v-model="drawer" absolute temporary right>
       <v-list dense>
         <v-subheader id="sub_header">
@@ -80,5 +85,10 @@ export default {
 
 .list_item {
   font-size: 24px;
+}
+
+#header_avater {
+  max-width: 36px;
+  max-height: 36px;
 }
 </style>

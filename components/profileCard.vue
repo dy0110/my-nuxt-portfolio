@@ -9,9 +9,18 @@
       &nbsp;Profile
     </v-card-title>
     <v-card-text>
-      <v-avatar class="mb-2" left color="accent" size="96">
-        <!-- <img src="" alt=""> -->
+      <!-- NOTE 画像が無い場合はアイコンを表示する-->
+      <v-avatar
+        v-if="user === undefined"
+        class="mb-2"
+        left
+        color="accent"
+        size="96"
+      >
         <span class="white--text display-1">D</span>
+      </v-avatar>
+      <v-avatar v-else class="mb-2" left color="accent" size="96">
+        <img :src="user.avatar_url" alt="アバター" />
       </v-avatar>
       <div>
         <p class="headline">
@@ -54,17 +63,17 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 import scrollTopButton from '../components/scrollTopButton'
 
 export default {
   components: {
     scrollTopButton
   },
-  data() {
-    // TODO StoreからGitHubのユーザー情報を取り出す
-    return {
-      user: null
-    }
+  computed: {
+    ...mapGetters({
+      user: 'user/getGithubUserData'
+    })
   }
 }
 </script>

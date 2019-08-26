@@ -1,13 +1,13 @@
 <template>
   <v-app>
-    <h1 v-if="error.statusCode === 404">
+    <h1 v-if="error.statusCode === 404" class="headline mb-3">
       {{ pageNotFound }}
     </h1>
-    <h1 v-else>
+    <h1 v-else class="headline mb-3">
       {{ otherError }}
     </h1>
-    <NuxtLink to="/">
-      Home page
+    <NuxtLink to="/" class="headline mb-3">
+      Home へ戻る
     </NuxtLink>
   </v-app>
 </template>
