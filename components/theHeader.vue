@@ -1,9 +1,20 @@
 <template>
   <div>
     <v-toolbar id="app_header" color="primary">
-      <v-btn icon active-class large :to="'/'" color="accent">
+      <v-btn
+        v-if="user === undefined"
+        icon
+        active-class
+        large
+        :to="'/'"
+        color="accent"
+      >
         <span class="white--text headline">D</span>
-        <!-- <img id="header_avater" src="icon.png" alt="" /> -->
+      </v-btn>
+      <v-btn v-else icon active-class large :to="'/'">
+        <v-avatar size="48">
+          <img :src="user.avatar_url" alt />
+        </v-avatar>
       </v-btn>
       <v-toolbar-title id="app_title" to="/" v-text="title" />
       <v-spacer />
@@ -55,7 +66,14 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
+
 export default {
+  computed: {
+    ...mapGetters({
+      user: 'user/getGithubUserData'
+    })
+  },
   data() {
     return {
       title: "Daichi Yoshida's PortForio",
@@ -85,10 +103,5 @@ export default {
 
 .list_item {
   font-size: 24px;
-}
-
-#header_avater {
-  max-width: 36px;
-  max-height: 36px;
 }
 </style>

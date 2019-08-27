@@ -19,9 +19,8 @@ export const actions = {
   async setGithubUserData({ commit, state }) {
     if (state.userData === null) {
       const userData = await this.$axios.$get(
-        `https://api.github.com/users/dy0110`
+        'https://api.github.com/users/dy0110'
       )
-      console.log(userData)
       commit('setGithubUserData', userData)
     }
   }
